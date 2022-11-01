@@ -1,7 +1,5 @@
 import React from "react";
-import { FragmentLoader } from "./FragmentLoader";
-
-const PROFILE_URL = "http://localhost:3001";
+import { App } from "./App";
 
 export const Html = () => {
   return (
@@ -10,9 +8,10 @@ export const Html = () => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/js"></script>
       </head>
       <body>
-        <FragmentLoader url={PROFILE_URL} />
+        <div id="app"><App /></div>
       </body>
     </>
   );

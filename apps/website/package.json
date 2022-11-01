@@ -7,7 +7,7 @@
 	"author": "Max Willmott <max.willmo@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "PORT=3000 ts-node src/server/index.tsx"
+		"dev": "webpack & PORT=3000 ts-node src/server/index.tsx"
 	}
   }
   

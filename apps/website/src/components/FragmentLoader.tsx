@@ -1,5 +1,7 @@
 import React, { Suspense } from "react";
 import {fetch} from "cross-fetch";
+// @ts-ignore
+import { Profile } from "profilemf/Profile";
 
 const isServer = typeof window === "undefined";
 interface FragmentLoaderProps {
@@ -8,7 +10,9 @@ interface FragmentLoaderProps {
 
 export const FragmentLoader: React.FC<FragmentLoaderProps> = (props) => {
   if (!isServer) {
-    return <p>Todo FragmentLoader client</p>
+    return (
+      <Profile name="Max Willmott"/>
+    )
   }
 
   const Fragment = renderFragment(props.url);

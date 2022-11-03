@@ -1,4 +1,5 @@
 const path = require("path");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 module.exports = {
   target: "web",
@@ -19,4 +20,12 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+
+  plugins: [
+    new ModuleFederationPlugin({
+      remotes: {
+        profilemf: "profilemf@http://localhost:3001/js/remoteHome.js",
+      },
+    }),
+  ],
 };

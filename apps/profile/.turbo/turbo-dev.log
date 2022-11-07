@@ -1,2 +1,0 @@
-$ PORT=3001 ts-node src/server/index.tsx
-Example app listening on port 3001

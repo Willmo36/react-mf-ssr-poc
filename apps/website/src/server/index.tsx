@@ -7,10 +7,8 @@ import { Html } from '../components/Html';
 const app = express();
 const port = process.env.PORT ?? "No port passed";
 
-app.get("/js", (req, res) => {
-  const rs = fs.createReadStream("./dist/bundle.js");
-  rs.pipe(res);
-});
+
+app.use("/js", express.static('dist'));
 
 app.get("/", (req, res) => {
   const comp = <Html />

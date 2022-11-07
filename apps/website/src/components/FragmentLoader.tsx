@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import {fetch} from "cross-fetch";
 // @ts-ignore
-import { Profile } from "profilemf/Profile";
+const Profile = React.lazy(() => import("profilemf/Profile"));
+// import {Profile} from 'profilemf/Profile';
 
 const isServer = typeof window === "undefined";
 interface FragmentLoaderProps {
@@ -11,7 +12,9 @@ interface FragmentLoaderProps {
 export const FragmentLoader: React.FC<FragmentLoaderProps> = (props) => {
   if (!isServer) {
     return (
+      <Suspense>
       <Profile name="Max Willmott"/>
+      </Suspense>
     )
   }
 

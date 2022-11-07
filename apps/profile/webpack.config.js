@@ -1,8 +1,9 @@
 const path = require("path");
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
   entry: "./src/client/index.tsx",
+  mode: 'production',
   module: {
     rules: [
       {
@@ -23,9 +24,14 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "profilemf",
-      filename: 'remoteHome.js',
+      // library: { type: 'var', name: 'profilemf' },
+      filename: 'remoteEntry.js',
       exposes: {
         Profile: "./src/components/Profile.tsx",
+      },
+      shared: {
+        react: { singleton: true, eager: true },
+        "react-dom": { singleton: true, eager: true },
       },
     }),
   ],

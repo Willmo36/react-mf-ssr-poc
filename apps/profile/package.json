@@ -7,7 +7,12 @@
 	"author": "Max Willmott <max.willmo@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "PORT=3001 ts-node src/server/index.tsx"
+		"clean": "rm -rf dist",
+		"dev": "yarn clean && yarn webpack && PORT=3001 ts-node src/server/index.tsx"
 	},
-	"devDependencies": {}
+	"devDependencies": {},
+	"dependencies": {
+		"react": "*",
+		"react-dom": "*"
+	}
 }

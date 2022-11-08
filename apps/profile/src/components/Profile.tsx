@@ -17,3 +17,5 @@ export const Profile: React.FC<{ name: string }> = (props) => {
     </section>
   );
 };
+
+export default Profile;

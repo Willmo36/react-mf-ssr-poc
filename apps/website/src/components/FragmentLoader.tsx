@@ -10,10 +10,12 @@ interface FragmentLoaderProps {
 }
 
 export const FragmentLoader: React.FC<FragmentLoaderProps> = (props) => {
+  console.info("in the fragment loader", isServer)
   if (!isServer) {
+    console.info("hello")
     return (
       <Suspense>
-      <Profile name="Max Willmott"/>
+        <Profile name="Max Pillmott"/>
       </Suspense>
     )
   }

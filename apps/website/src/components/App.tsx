@@ -8,6 +8,6 @@ export const App = () => {
   }, [])
 
 	return (
-        <FragmentLoader url={PROFILE_URL} />
+      <FragmentLoader url={PROFILE_URL} />
 	)
 }

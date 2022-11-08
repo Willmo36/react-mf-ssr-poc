@@ -29,8 +29,8 @@ module.exports = {
         profilemf: "profilemf@http://localhost:3001/js/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
+        react: { singleton: true },
+        "react-dom": { singleton: true },
       },
     }),
   ],

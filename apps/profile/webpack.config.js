@@ -1,9 +1,9 @@
 const path = require("path");
-const { ModuleFederationPlugin } = require('webpack').container;
+const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   entry: "./src/client/index.tsx",
-  mode: 'production',
+  mode: "production",
   module: {
     rules: [
       {
@@ -17,21 +17,21 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
-  externals: ['react', 'react-dom'],
+  // externals: ["react", "react-dom"],
   plugins: [
     new ModuleFederationPlugin({
       name: "profilemf",
       // library: { type: 'var', name: 'profilemf' },
-      filename: 'remoteEntry.js',
+      filename: "remoteEntry.js",
       exposes: {
-        Profile: "./src/components/Profile.tsx",
+        "./Profile": "./src/components/Profile.tsx",
       },
       shared: {
-        react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
+        react: { singleton: true },
+        "react-dom": { singleton: true },
       },
     }),
   ],

@@ -4,7 +4,7 @@ const { ModuleFederationPlugin } = require("webpack").container;
 module.exports = {
   target: "web",
   entry: "./src/client/index.tsx",
-  mode: "production",
+  mode: "development",
   module: {
     rules: [
       {

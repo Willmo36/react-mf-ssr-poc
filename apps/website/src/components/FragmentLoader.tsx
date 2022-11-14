@@ -15,7 +15,9 @@ export const FragmentLoader: React.FC<FragmentLoaderProps> = (props) => {
     console.info("hello")
     return (
       <Suspense>
-        <Profile name="Max Pillmott"/>
+        <section data-mf={props.url}>
+        <Profile name="Max Willmott"/>
+        </section>
       </Suspense>
     )
   }
@@ -33,7 +35,7 @@ function renderFragment(url: string) {
   return React.lazy(async () => {
     const fragment = (await fetchFragment(url));
     const component = () => (
-      <div dangerouslySetInnerHTML={{ __html: fragment }} />
+      <section data-mf={url} dangerouslySetInnerHTML={{ __html: fragment }} />
     );
     return {
       default: component,

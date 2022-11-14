@@ -3,7 +3,7 @@ const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   entry: "./src/client/index.tsx",
-  mode: "production",
+  mode: "development",
   module: {
     rules: [
       {
@@ -20,7 +20,6 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
-  // externals: ["react", "react-dom"],
   plugins: [
     new ModuleFederationPlugin({
       name: "profilemf",

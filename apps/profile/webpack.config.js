@@ -1,29 +1,12 @@
-const path = require("path");
 const { ModuleFederationPlugin } = require("webpack").container;
+const baseConfig = require("../../webpack.base.config");
 
 module.exports = {
+  ...baseConfig,
   entry: "./src/client/index.tsx",
-  mode: "development",
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
-  },
   plugins: [
     new ModuleFederationPlugin({
       name: "profilemf",
-      // library: { type: 'var', name: 'profilemf' },
       filename: "remoteEntry.js",
       exposes: {
         "./Profile": "./src/components/Profile.tsx",

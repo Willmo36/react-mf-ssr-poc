@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { SERP } from "../pages/SERP";
 import { FragmentLoader } from "./FragmentLoader"
 
 const PROFILE_URL = "http://localhost:3001";
@@ -8,6 +9,7 @@ export const App = () => {
   }, [])
 
 	return (
-      <FragmentLoader url={PROFILE_URL} />
+    <SERP/>
+      // <FragmentLoader url={PROFILE_URL} />
 	)
 }

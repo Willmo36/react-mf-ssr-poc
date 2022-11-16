@@ -1,18 +1,17 @@
 $ PORT=3000 ts-node --project ./tsconfig.server.json src/server/index.tsx
 Example app listening on port 3000
-assets by chunk 1.12 MiB (id hint: vendors)
+assets by chunk 1.13 MiB (id hint: vendors)
   asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
   asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
-asset bundle.js 29.6 KiB [emitted] (name: main)
-asset src_client_bootstrap_tsx.bundle.js 5.18 KiB [emitted]
-runtime modules 20.6 KiB 14 modules
-built modules 1.08 MiB (javascript) 126 bytes (consume-shared) 84 bytes (share-init) [built]
-  cacheable modules 1.08 MiB
-    modules by path ../../node_modules/ 1.08 MiB 7 modules
-    modules by path ./src/ 817 bytes
-      modules by path ./src/client/*.tsx 227 bytes 2 modules
-      ./src/components/App.tsx 324 bytes [built] [code generated]
-      ./src/pages/SERP.tsx 266 bytes [built] [code generated]
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js.bundle.js 17.8 KiB [emitted] (id hint: vendors)
+asset bundle.js 32.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.51 KiB [emitted]
+runtime modules 22.1 KiB 15 modules
+built modules 1.1 MiB (javascript) 126 bytes (consume-shared) 90 bytes (share-init) 6 bytes (remote) [built]
+  javascript modules 1.1 MiB
+    modules by path ../../node_modules/ 1.1 MiB 8 modules
+    modules by path ./src/ 3.2 KiB 6 modules
+    external "profilemf@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
   consume-shared-module modules 126 bytes
     consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/index.js) 42 bytes [built] [code generated]
     consume shared module (default) react-dom@* (singleton) (fallback: ../../node_modules/react-dom/index.js) 42 bytes [built] [code generated]
@@ -20,219 +19,159 @@ built modules 1.08 MiB (javascript) 126 bytes (consume-shared) 84 bytes (share-i
   provide-module modules 84 bytes
     provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
     provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+  remote profilemf/Profile 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 2853 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.26 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 636 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 312 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 2391 ms
+Render server
+assets by status 1.17 MiB [cached] 4 assets
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.49 KiB [emitted]
+cached modules 1.1 MiB (javascript) 90 bytes (share-init) 126 bytes (consume-shared) 6 bytes (remote) 22.1 KiB (runtime) [cached] 34 modules
+javascript modules 2.17 KiB
+  ./src/fragments/SearchEngineResults.ts 188 bytes [built] [code generated]
+  ./src/components/FragmentLoader.tsx 1.98 KiB [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 713 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.27 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 640 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 316 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 1571 ms
+assets by status 1.17 MiB [cached] 4 assets
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.49 KiB [emitted]
+cached modules 1.1 MiB (javascript) 90 bytes (share-init) 126 bytes (consume-shared) 6 bytes (remote) 22.1 KiB (runtime) [cached] 34 modules
+javascript modules 871 bytes
+  ./src/pages/SERP.tsx 683 bytes [built] [code generated]
+  ./src/fragments/SearchEngineResults.ts 188 bytes [built]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 415 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.27 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 640 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 316 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 58 ms
+assets by status 1.17 MiB [cached] 4 assets
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.53 KiB [emitted]
+cached modules 1.1 MiB (javascript) 90 bytes (share-init) 126 bytes (consume-shared) 6 bytes (remote) 22.1 KiB (runtime) [cached] 33 modules
+javascript modules 2.86 KiB
+  ./src/pages/SERP.tsx 683 bytes [built] [code generated]
+  ./src/fragments/SearchEngineResults.ts 204 bytes [built] [code generated]
+  ./src/components/FragmentLoader.tsx 1.99 KiB [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 342 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.4 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 727 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 403 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 1135 ms
+assets by status 1.18 MiB [cached] 5 assets
+cached modules 1.1 MiB (javascript) 90 bytes (share-init) 126 bytes (consume-shared) 6 bytes (remote) 22.1 KiB (runtime) [cached] 34 modules
+javascript modules 2.19 KiB
+  ./src/fragments/SearchEngineResults.ts 204 bytes [built]
+  ./src/components/FragmentLoader.tsx 1.99 KiB [built]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 348 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.4 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 732 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 408 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 58 ms
+assets by status 1.12 MiB [cached] 2 assets
+assets by path . 39.5 KiB
+  asset bundle.js 32.6 KiB [emitted] (name: main)
+  asset src_client_bootstrap_tsx.bundle.js 6.9 KiB [emitted]
+cached modules 90 bytes (share-init) 1.08 MiB (javascript) 126 bytes (consume-shared) 6 bytes (remote) [cached] 17 modules
+runtime modules 22 KiB 15 modules
+cacheable modules 238 bytes
+  ./src/client/index.tsx 34 bytes [code generated]
+  ./src/fragments/SearchEngineResults.ts 204 bytes [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 330 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.42 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 745 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 421 bytes [built] [code generated]
+ERROR in ./src/fragments/SearchEngineResults.ts 1:0-64
+Module not found: Error: Can't resolve '../components/FragmentLoader' in '/Users/max.willmott/code/react-ssr-mf/apps/website/src/fragments'
+resolve '../components/FragmentLoader' in '/Users/max.willmott/code/react-ssr-mf/apps/website/src/fragments'
+  using description file: /Users/max.willmott/code/react-ssr-mf/apps/website/package.json (relative path: ./src/fragments)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /Users/max.willmott/code/react-ssr-mf/apps/website/package.json (relative path: ./src/components/FragmentLoader)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentLoader doesn't exist
+      .tsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentLoader.tsx doesn't exist
+      .ts
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentLoader.ts doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentLoader.js doesn't exist
+      as directory
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentLoader doesn't exist
+ @ ./src/pages/SERP.tsx 2:0-79 9:45-79
+ @ ./src/components/App.tsx 2:0-37 4:32-36
+ @ ./src/client/bootstrap.tsx 3:0-40 4:64-67
+ @ ./src/client/index.tsx 1:0-21
+
+webpack 5.74.0 compiled with 1 error and 1 warning in 39 ms
+assets by status 1.13 MiB [cached] 3 assets
+assets by path . 42.4 KiB
+  asset bundle.js 32.9 KiB [emitted] (name: main)
+  asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.54 KiB [emitted]
+cached modules 90 bytes (share-init) 1.1 MiB (javascript) 126 bytes (consume-shared) 6 bytes (remote) [cached] 17 modules
+runtime modules 22.1 KiB 15 modules
+cacheable modules 2.89 KiB
+  ./src/client/index.tsx 34 bytes [code generated]
+  ./src/pages/SERP.tsx 683 bytes [built] [code generated]
+  ./src/fragments/SearchEngineResults.ts 206 bytes [built] [code generated]
+  ./src/components/FragmentRenderer.tsx 1.99 KiB [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 424 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.43 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 760 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 436 bytes [built] [code generated]
+webpack 5.74.0 compiled with 1 warning in 1506 ms
+assets by status 1.12 MiB [cached] 2 assets
+assets by path . 39.5 KiB
+  asset bundle.js 32.6 KiB [emitted] (name: main)
+  asset src_client_bootstrap_tsx.bundle.js 6.91 KiB [emitted]
+cached modules 90 bytes (share-init) 1.08 MiB (javascript) 126 bytes (consume-shared) 6 bytes (remote) [cached] 17 modules
+runtime modules 22 KiB 15 modules
+cacheable modules 240 bytes
+  ./src/client/index.tsx 34 bytes [code generated]
+  ./src/fragments/SearchEngineResults.ts 206 bytes [built] [code generated]
 
 WARNING in shared module react-dom
 No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
 
-webpack 5.74.0 compiled with 1 warning in 389 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.43 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 761 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 437 bytes [built] [code generated]
+ERROR in ./src/fragments/SearchEngineResults.ts 1:0-66
+Module not found: Error: Can't resolve '../components/FragmentRenderer' in '/Users/max.willmott/code/react-ssr-mf/apps/website/src/fragments'
+resolve '../components/FragmentRenderer' in '/Users/max.willmott/code/react-ssr-mf/apps/website/src/fragments'
+  using description file: /Users/max.willmott/code/react-ssr-mf/apps/website/package.json (relative path: ./src/fragments)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /Users/max.willmott/code/react-ssr-mf/apps/website/package.json (relative path: ./src/components/FragmentRenderer)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentRenderer doesn't exist
+      .tsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentRenderer.tsx doesn't exist
+      .ts
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentRenderer.ts doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentRenderer.js doesn't exist
+      as directory
+        /Users/max.willmott/code/react-ssr-mf/apps/website/src/components/FragmentRenderer doesn't exist
+ @ ./src/pages/SERP.tsx 2:0-79 9:45-79
+ @ ./src/components/App.tsx 2:0-37 4:32-36
+ @ ./src/client/bootstrap.tsx 3:0-40 4:64-67
+ @ ./src/client/index.tsx 1:0-21
 
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 313 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.52 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 807 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 483 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 326 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 846 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 522 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 321 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 846 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 522 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 306 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 849 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 525 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 409 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 853 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 529 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 361 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 849 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 525 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 341 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.56 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 853 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 529 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 386 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.57 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 854 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 530 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 586 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.57 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 855 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 531 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 378 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.57 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 855 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 531 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 398 ms
-assets by status 1.15 MiB [cached] 3 assets
-asset src_client_bootstrap_tsx.bundle.js 5.58 KiB [emitted]
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-shared) 20.6 KiB (runtime) [cached] 28 modules
-javascript modules 865 bytes
-  ./src/components/App.tsx 324 bytes [built] [code generated]
-  ./src/pages/SERP.tsx 541 bytes [built] [code generated]
-
-WARNING in shared module react-dom
-No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
-
-webpack 5.74.0 compiled with 1 warning in 317 ms
-assets by status 1.15 MiB [cached] 4 assets
-cached modules 1.08 MiB (javascript) 84 bytes (share-init) 126 bytes (consume-share
+webpack 5.74.0 compiled with 1 error and 1 warning in 40 ms
+assets by status 1.13 MiB [cached] 3 assets
+assets by path . 42.4 KiB
+  asset bundle.js 32.9 KiB [emitted] (name: main)
+  asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom.bundle.js 9.5 KiB [emitted]
+cached modules 90 bytes (share-init) 1.1 MiB (javascript) 126 bytes (consume-shared) 6 bytes (remote) [cached] 17 modules
+runtime modules 22.1 KiB 15 modules
+cacheable modules 2.88 KiB
+  modules by path ./src/fragments/ 2.18 KiB
+    ./src/fragments/SearchEngineResults.ts 194 bytes [built] [code generated]
+    ./src/fragments/FragmentRenderer.tsx 1.99 KiB [built] [code generated]
+  ./src/client/index.tsx 34 

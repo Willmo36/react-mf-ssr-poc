@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchEngineResultsFragment } from "../fragments/SearchEngineResults";
 
 export const SERP = () => {
   return (
@@ -13,10 +14,7 @@ export const SERP = () => {
         <h3>Sign in</h3>
       </header>
 
-      <section>
-		
-
-	  </section>
+      <section>{SearchEngineResultsFragment.render({name: "Max Willmott"})}</section>
     </div>
   );
 };

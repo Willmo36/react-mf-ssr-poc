@@ -1,7 +1,7 @@
 import { FragmentRenderer } from "./FragmentRenderer";
 
 export const SearchEngineResultsFragment = new FragmentRenderer<{name: string}>(
-  "http://localhost:3001",
+  "http://localhost:3001/fragments/search",
   //@ts-ignore
-  () => import("profilemf/Profile"),
+  () => import("search/SearchEngineResults"),
 );

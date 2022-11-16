@@ -26,9 +26,9 @@ export class FragmentRenderer<Props extends Record<string, any>> {
   }
 
   renderServer(props: Props) {
-    console.info("Render server")
     const Comp = React.lazy(async () => {
     const propsQuery = new URLSearchParams(props).toString();
+    console.info("Render server", propsQuery)
     const res = await fetch(`${this.ssrUrl}?${propsQuery}`);
     const fragment =  await res.text();
       const component = () => (

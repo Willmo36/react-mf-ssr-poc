@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect } from "react";
 
-export const Profile: React.FC<{ name: string }> = (props) => {
+export const SearchEngineResults: React.FC<{ name: string }> = (props) => {
   useEffect(() => {
-    console.info("Profile - tick");
+    console.info("SearchEngineResults::init");
   });
 
   const onclick = useCallback(() => {
-    alert("Profile clicked");
+    console.info("SearchEngineResults::onclick");
   }, []);
 
   return (
-    <section data-origin="profile">
+    <section data-origin="search">
       <h4 onClick={onclick} className="text-3xl font-bold underline">
         {props.name}
       </h4>
@@ -18,4 +18,4 @@ export const Profile: React.FC<{ name: string }> = (props) => {
   );
 };
 
-export default Profile;
+export default SearchEngineResults;

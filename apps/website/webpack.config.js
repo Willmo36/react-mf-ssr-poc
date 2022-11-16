@@ -10,7 +10,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "website",
       remotes: {
-        profilemf: "profilemf@http://localhost:3001/js/remoteEntry.js",
+        "search": "search@http://localhost:3001/js/remoteEntry.js",
       },
       shared: {
         react: { singleton: true },

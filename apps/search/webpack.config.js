@@ -6,10 +6,10 @@ module.exports = {
   entry: "./src/client/index.tsx",
   plugins: [
     new ModuleFederationPlugin({
-      name: "profilemf",
+      name: "search",
       filename: "remoteEntry.js",
       exposes: {
-        "./Profile": "./src/components/Profile.tsx",
+        "./SearchEngineResults": "./src/components/SearchEngineResults.tsx",
       },
       shared: {
         react: { singleton: true },

@@ -1,6 +1,6 @@
 import express from "express";
 import React from "react";
-import { delayHandler, renderMethod } from "shared";
+import { delayHandler, fragmentHandler } from "shared";
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import SearchEngineResults from "../components/SearchEngineResults";
@@ -12,13 +12,15 @@ const port = process.env.PORT ?? "No port passed";
 
 app.use("/js/", webpackDevMiddleware(compiler));
 
-app.get("/fragments/search", delayHandler, (req, res) => {
-  // @ts-ignore
-  const name = req.query["name"] as string;
-  const comp = <SearchEngineResults name={name} />;
-
-  renderMethod(comp).pipe(res);
-});
+app.get(
+  "/fragments/search",
+  delayHandler,
+  fragmentHandler((req) => {
+    // @ts-ignore
+    const name = req.query["name"] as string;
+    return <SearchEngineResults name={name} />;
+  })
+);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

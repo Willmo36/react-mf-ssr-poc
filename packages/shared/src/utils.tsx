@@ -1,4 +1,5 @@
-import type { Handler } from "express";
+import React from "react";
+import type { Handler, Request } from "express";
 import {
   renderToPipeableStream,
   renderToStaticNodeStream,
@@ -12,3 +13,11 @@ export const renderMethod =
   process.env.RENDER_TYPE === "stream"
     ? renderToPipeableStream
     : renderToStaticNodeStream;
+
+export function fragmentHandler(
+  render: (req: Request) => React.ReactElement
+): Handler {
+  return (req, res) => {
+    renderMethod(render(req)).pipe(res);
+  };
+}

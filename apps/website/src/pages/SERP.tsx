@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchEnginePromotionsFragment } from "../fragments/SearchEnginePromotions";
 import { SearchEngineResultsFragment } from "../fragments/SearchEngineResults";
 
 export const SERP = () => {
@@ -14,7 +15,10 @@ export const SERP = () => {
         <h3>Sign in</h3>
       </header>
 
-      <section>{SearchEngineResultsFragment.render({name: "Max Willmott"})}</section>
+      <section>
+        {SearchEnginePromotionsFragment.render({ query: "Max Willmott" })}
+        {SearchEngineResultsFragment.render({ name: "Max Willmott" })}
+      </section>
     </div>
   );
 };

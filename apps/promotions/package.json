@@ -1,5 +1,5 @@
 {
-	"name": "website",
+	"name": "promotions",
 	"private": true,
 	"version": "0.0.1",
 	"description": "",
@@ -8,14 +8,13 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"_dev": "PORT=3000 ts-node --project ./tsconfig.server.json src/server/index.tsx",
+		"_dev": "PORT=3002 DELAY=4000 ts-node --project ./tsconfig.server.json src/server/index.tsx",
 		"dev:stream": "RENDER_TYPE=stream yarn _dev",
 		"dev:static": "yarn _dev"
 	},
+	"devDependencies": {},
 	"dependencies": {
 		"react": "*",
-		"react-dom": "*",
-		"shared": "*"
+		"react-dom": "*"
 	}
-  }
-  
+}

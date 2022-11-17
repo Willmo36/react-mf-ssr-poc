@@ -7,10 +7,12 @@
   "author": "Max Willmott <max.willmo@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
-    "dev": "turbo dev"
+    "dev:stream": "turbo dev:stream",
+    "dev:static": "turbo dev:static"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",

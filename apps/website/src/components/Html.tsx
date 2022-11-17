@@ -13,7 +13,7 @@ export const Html = () => {
         <link rel="stylesheet" href="/css/skeleton.css"/>
         <link rel="stylesheet" href="/css/custom.css"/>
       </head>
-      <body>
+      <body className="">
         <div id="app"><App /></div>
       </body>
     </>

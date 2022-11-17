@@ -6,14 +6,11 @@ module.exports = {
   entry: "./src/client/index.tsx",
   plugins: [
     new ModuleFederationPlugin({
-      name: "search",
+      name: "promotions",
       filename: "remoteEntry.js",
       exposes: {
-        "./SearchEngineResults": "./src/components/SearchEngineResults.tsx",
+        "./SearchEnginePromotions": "./src/components/SearchEnginePromotions.tsx",
       },
-      // remotes: {
-      //   promotions: "promotions@http://localhost:3002/js/remoteEntry.js"
-      // },
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },

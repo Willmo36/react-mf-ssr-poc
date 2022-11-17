@@ -1,21 +1,22 @@
 import express from "express";
 import React from "react";
-import { renderMethod } from "shared";
+import { delayHandler, renderMethod } from "shared";
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
-import { Html } from "../components/Html";
+import SearchEnginePromotions from "../components/SearchEnginePromotions";
 const webpackConfig = require("../../webpack.config.js");
 
 const compiler = webpack(webpackConfig);
 const app = express();
 const port = process.env.PORT ?? "No port passed";
 
-app.use(express.static("public"));
 app.use("/js/", webpackDevMiddleware(compiler));
 
-app.get("/", (_req, res) => {
-  const comp = <Html />;
-  
+app.get("/fragments/search-promotions", delayHandler, (req, res) => {
+  // @ts-ignore
+  const query = req.query["query"] as string;
+
+  const comp = <SearchEnginePromotions query={query} />;
   renderMethod(comp).pipe(res);
 });
 

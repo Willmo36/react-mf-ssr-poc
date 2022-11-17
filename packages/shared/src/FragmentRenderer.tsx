@@ -14,10 +14,9 @@ export class FragmentRenderer<Props extends Record<string, any>> {
   }
 
   renderClient(props: Props) {
-    console.info("Render client")
     const Comp = React.lazy(this.mfImport);
     return (
-      <Suspense>
+      <Suspense fallback={<p>Loading {this.ssrUrl}...</p>}>
         <section data-mf={this.ssrUrl}>
           <Comp {...props} />
         </section>
@@ -42,7 +41,7 @@ export class FragmentRenderer<Props extends Record<string, any>> {
       };
     });
     return (
-      <Suspense>
+      <Suspense fallback={<p>Loading {this.ssrUrl}...</p>}>
         <Comp />
       </Suspense>
     );

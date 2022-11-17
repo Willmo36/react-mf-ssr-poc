@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 
-export const SearchEngineResults: React.FC<{ name: string }> = (props) => {
+export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
   useEffect(() => {
-    console.info("SearchEngineResults::init");
+    console.info("SearchEnginePromotions::init");
   });
 
   const onclick = useCallback(() => {
@@ -10,12 +10,12 @@ export const SearchEngineResults: React.FC<{ name: string }> = (props) => {
   }, []);
 
   return (
-    <div className="bg-orange-300 p-4">
+    <div className="bg-lime-300">
       <h4 onClick={onclick} className="text-3xl font-bold underline">
-      Search Results:
+        Promotions
       </h4>
     </div>
   );
 };
 
-export default SearchEngineResults;
+export default SearchEnginePromotions;

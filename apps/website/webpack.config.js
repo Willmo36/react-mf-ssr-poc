@@ -11,6 +11,7 @@ module.exports = {
       name: "website",
       remotes: {
         "search": "search@http://localhost:3001/js/remoteEntry.js",
+        promotions: "promotions@http://localhost:3002/js/remoteEntry.js"
       },
       shared: {
         react: { singleton: true },

@@ -1,4 +1,4 @@
-import { FragmentRenderer } from "./FragmentRenderer";
+import { FragmentRenderer } from "shared";
 
 export const SearchEngineResultsFragment = new FragmentRenderer<{name: string}>(
   "http://localhost:3001/fragments/search",

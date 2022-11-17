@@ -1,6 +1,6 @@
 import express from "express";
 import React from "react";
-import { fragmentHandler } from "shared";
+import { fragmentHandler } from "server-shared";
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import { Html } from "../components/Html";

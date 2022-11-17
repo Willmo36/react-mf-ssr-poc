@@ -1,6 +1,6 @@
 import React from "react";
-import { SearchEnginePromotionsFragment } from "../fragments/SearchEnginePromotions";
-import { SearchEngineResultsFragment } from "../fragments/SearchEngineResults";
+import { SearchEnginePromotionsFragment } from "../fragments/SearchEnginePromotionsFragment";
+import { SearchEngineResultsFragment } from "../fragments/SearchEngineResultsFragment";
 
 export const SERP = () => {
   return (

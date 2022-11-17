@@ -15,7 +15,8 @@
 	"dependencies": {
 		"react": "*",
 		"react-dom": "*",
-		"shared": "*"
+		"server-shared": "*",
+		"fragments": "*"
 	}
   }
   

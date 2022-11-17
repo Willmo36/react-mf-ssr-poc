@@ -1,6 +1,6 @@
 import express from "express";
 import React from "react";
-import { delayHandler, fragmentHandler } from "shared";
+import { delayHandler, fragmentHandler } from "../../../../packages/server-shared/src";
 import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import SearchEngineResults from "../components/SearchEngineResults";

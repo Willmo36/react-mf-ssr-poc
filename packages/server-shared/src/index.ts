@@ -4,9 +4,15 @@ import {
   renderToPipeableStream,
   renderToStaticNodeStream,
 } from "react-dom/server";
+import dotenv from "dotenv"
+import dotenvExpand from "dotenv-expand"
 
-export const delayHandler: Handler = (_rq, _rs, next) => {
-  setTimeout(next, Number(process.env.DELAY) ?? 0);
+const config = dotenv.config({path: "../../.env.development"})
+console.info("The config", config);
+dotenvExpand.expand(config);
+
+export const delayHandler = (ms: number):  Handler => (_rq, _rs, next) => {
+  setTimeout(next, ms);
 };
 
 export const renderMethod =

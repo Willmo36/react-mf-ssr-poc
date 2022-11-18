@@ -8,7 +8,7 @@ const webpackConfig = require("../../webpack.config.js");
 
 const compiler = webpack(webpackConfig);
 const app = express();
-const port = process.env.PORT ?? "No port passed";
+const port = process.env.WEBSITE_PORT ?? "No port passed";
 
 app.use(express.static("public"));
 app.use("/js/", webpackDevMiddleware(compiler));

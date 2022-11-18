@@ -8,13 +8,13 @@ const webpackConfig = require("../../webpack.config.js");
 
 const compiler = webpack(webpackConfig);
 const app = express();
-const port = process.env.PORT ?? "No port passed";
+const port = process.env.PROMOTIONS_PORT ?? "No port passed";
 
 app.use("/js/", webpackDevMiddleware(compiler));
 
 app.get(
   "/fragments/search-promotions",
-  delayHandler,
+  delayHandler(Number(process.env.PROMOTIONS_DELAY) ?? 0),
   fragmentHandler((req) => {
     // @ts-ignore
     const query = req.query["query"] as string;

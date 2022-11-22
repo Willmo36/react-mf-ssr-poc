@@ -8,15 +8,14 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"_dev": "PORT=$WEBSITE_PORT ts-node --project ./tsconfig.server.json src/server/index.tsx",
+		"_dev": "ts-node --project ./tsconfig.server.json src/server/index.tsx",
 		"dev:stream": "RENDER_TYPE=stream yarn _dev",
 		"dev:static": "yarn _dev"
 	},
 	"dependencies": {
+		"fragments": "*",
 		"react": "*",
 		"react-dom": "*",
-		"server-shared": "*",
-		"fragments": "*"
+		"server-shared": "*"
 	}
-  }
-  
+}

@@ -2,6 +2,7 @@
   "name": "react-ssr-mf",
   "private": true,
   "version": "0.0.1",
+  "packageManager": "yarn@3.3.0",
   "description": "Monorepo of React apps coming together for SSR",
   "main": "index.js",
   "author": "Max Willmott <max.willmo@gmail.com>",

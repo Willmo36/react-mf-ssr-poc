@@ -19,5 +19,5 @@ app.get(
 );
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Website on port ${port}`);
 });

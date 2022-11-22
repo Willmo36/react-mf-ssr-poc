@@ -23,5 +23,5 @@ app.get(
 );
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Search listening on port ${port}`);
 });

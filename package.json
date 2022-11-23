@@ -15,6 +15,7 @@
     "dev:stream": "turbo dev:stream",
     "dev:static": "turbo dev:static",
     "build:server:static": "turbo build:server:static",
+    "build:server:stream": "turbo build:server:stream",
     "start:server": "turbo start:server"
   },
   "devDependencies": {

@@ -12,7 +12,9 @@
 		"dev:stream": "RENDER_TYPE=stream yarn _dev",
 		"dev:static": " yarn _dev",
 		"build:client": "npx webpack build --mode=production",
-		"build:server:static": "yarn build:client && cp -r ./dist ./server_dist && npx webpack build --config ./webpack.server.config.js",
+		"_build:client:copy": "yarn build:client && cp -r ./dist ./server_dist",
+		"build:server:static": "yarn _build:client:copy && npx webpack build --config ./webpack.server.config.js",
+		"build:server:stream": "yarn _build:client:copy && RENDER_TYPE=stream npx webpack build --config ./webpack.server.config.js",
 		"start:server": "node server_dist/server.js"
 	},
 	"dependencies": {

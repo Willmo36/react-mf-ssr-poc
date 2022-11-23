@@ -34,5 +34,8 @@ module.exports = {
     new webpack.IgnorePlugin({
       resourceRegExp: /webpack$|webpack-dev-server$/,
     }),
+    new webpack.DefinePlugin({
+      "process.env.RENDER_TYPE": JSON.stringify(process.env.RENDER_TYPE)
+    })
   ],
 };

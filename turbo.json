@@ -3,6 +3,8 @@
 	"globalDependencies": [".env.development"],
 	"pipeline": {
 		"dev:stream": {},
-		"dev:static": {}
+		"dev:static": {},
+		"build:server:static": {},
+		"start:server": {}
 	}
 }

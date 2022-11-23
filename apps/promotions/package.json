@@ -10,7 +10,9 @@
 		"clean": "rm -rf dist",
 		"_dev": "ts-node --project ./tsconfig.server.json src/server/index.tsx",
 		"dev:stream": "RENDER_TYPE=stream yarn _dev",
-		"dev:static": "yarn _dev"
+		"dev:static": "yarn _dev",
+		"build:server:static": "npx webpack build --config ./webpack.server.config.js",
+		"start:server": "node server_dist/server.js"
 	},
 	"dependencies": {
 		"react": "*",

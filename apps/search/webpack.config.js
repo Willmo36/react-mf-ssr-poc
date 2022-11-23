@@ -11,9 +11,6 @@ module.exports = {
       exposes: {
         "./SearchEngineResults": "./src/components/SearchEngineResults.tsx",
       },
-      // remotes: {
-      //   promotions: "promotions@http://localhost:3002/js/remoteEntry.js"
-      // },
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },

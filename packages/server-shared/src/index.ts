@@ -1,6 +1,7 @@
 import path from "path";
 import React from "react";
 import type { Handler, Request, Express } from "express";
+import express from "express";
 import {
   renderToPipeableStream,
   renderToStaticNodeStream,
@@ -31,8 +32,7 @@ export function fragmentHandler(
   };
 }
 
-export function webpackDevServer(app: Express) {
-  console.log("Applying webpack dev server", process.env.NODE_ENV, process.cwd())
+export function jsRouter(app: Express) {
   if (process.env.NODE_ENV === "development") {
     const webpack = require("webpack");
     const webpackDevMiddleware = require("webpack-dev-middleware");
@@ -42,5 +42,7 @@ export function webpackDevServer(app: Express) {
     ));
     const compiler = webpack(webpackConfig);
     app.use("/js/", webpackDevMiddleware(compiler));
+  } else {
+    app.use("/js", express.static("dist"));
   }
 }

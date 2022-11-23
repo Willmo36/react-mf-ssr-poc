@@ -1,12 +1,12 @@
 import express from "express";
 import React from "react";
-import { delayHandler, fragmentHandler, webpackDevServer } from "server-shared";
+import { delayHandler, fragmentHandler, jsRouter } from "server-shared";
 import SearchEnginePromotions from "../components/SearchEnginePromotions";
 
 const app = express();
 const port = process.env.PROMOTIONS_PORT ?? "No port passed";
 
-webpackDevServer(app);
+jsRouter(app);
 
 app.get(
   "/fragments/search-promotions",

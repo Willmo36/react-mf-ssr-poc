@@ -1,12 +1,12 @@
 import express from "express";
 import React from "react";
-import { delayHandler, fragmentHandler, webpackDevServer } from "server-shared";
+import { delayHandler, fragmentHandler, jsRouter } from "server-shared";
 import SearchEngineResults from "../components/SearchEngineResults";
 
 const app = express();
 const port = process.env.SEARCH_PORT ?? "No port passed";
 
-webpackDevServer(app);
+jsRouter(app);
 
 app.get(
   "/fragments/search",

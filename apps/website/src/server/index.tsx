@@ -1,12 +1,12 @@
 import express from "express";
 import React from "react";
-import { fragmentHandler, webpackDevServer } from "server-shared";
+import { fragmentHandler, jsRouter } from "server-shared";
 import { Html } from "../components/Html";
 
 const app = express();
 const port = process.env.WEBSITE_PORT ?? "No port passed";
 
-webpackDevServer(app);
+jsRouter(app);
 
 app.use(express.static("public"));
 

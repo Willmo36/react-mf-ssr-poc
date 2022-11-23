@@ -1,4 +1,5 @@
 {
 	"extends": "../../tsconfig.json",
-	"files": ["src/server/index.tsx"],
+	"include": ["./src/**/*", ],
+	"exclude": ["./src/client/**/*"]
 }

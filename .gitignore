@@ -4,3 +4,6 @@ dist
 .DS_Store
 
 server_dist
+.vercel
+
+api

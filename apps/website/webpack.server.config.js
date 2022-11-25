@@ -9,7 +9,7 @@ module.exports = {
   entry: "./src/server/vercel.tsx",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "server_dist", "api")
+    path: path.resolve(__dirname,  "../../api")
   },
   module: {
     rules: [

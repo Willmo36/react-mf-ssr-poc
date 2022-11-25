@@ -1,8 +1,12 @@
-import React from "react"
+import express from "express";
+import React from "react";
+import { fragmentHandler } from "server-shared";
 import { Html } from "../components/Html";
-import type {VercelRequest, VercelResponse} from "@vercel/node";
-import { renderToPipeableStream } from "react-dom/server";
 
-export default (_req: VercelRequest, res: VercelResponse) => {
-	 renderToPipeableStream(<Html />).pipe(res)
-}
+const app = express();
+app.get("/", fragmentHandler(() => {
+	console.log("Website::/ hit!");
+	return <Html />;
+}));
+
+module.exports = app;

@@ -8,7 +8,7 @@ module.exports = {
   mode: "production",
   entry: "./src/server/vercel.tsx",
   output: {
-    filename: "handler.js",
+    filename: "index.js",
     path: path.resolve(__dirname, "server_dist", "api")
   },
   module: {

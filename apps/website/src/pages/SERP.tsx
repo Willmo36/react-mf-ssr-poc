@@ -1,4 +1,6 @@
+import { FragmentError } from "fragments";
 import React from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { Loading } from "../components/Loading";
 import { SearchEnginePromotionsFragment } from "../fragments/SearchEnginePromotionsFragment";
 import { SearchEngineResultsFragment } from "../fragments/SearchEngineResultsFragment";
@@ -8,8 +10,8 @@ export const SERP = () => {
     <div className="">
       <header className="header p-8 flex items-center justify-between bg-emerald-400">
         <div>
-        <h1 className="text-4xl">ShareTheDishes</h1>
-        <p className="text-sm italic">Kickstarter for meal prep</p>
+          <h1 className="text-4xl">ShareTheDishes</h1>
+          <p className="text-sm italic">Kickstarter for meal prep</p>
         </div>
         <form className="m-0 w-96">
           <div className="">
@@ -25,8 +27,12 @@ export const SERP = () => {
       </header>
 
       <section className="p-10">
-        {SearchEnginePromotionsFragment.render({ query: "Max Willmott" })}
-        {SearchEngineResultsFragment.render({ name: "Max Willmott" })}
+        <ErrorBoundary FallbackComponent={FragmentError}>
+          {SearchEnginePromotionsFragment.render({ query: "Max Willmott" })}
+        </ErrorBoundary>
+        <ErrorBoundary FallbackComponent={FragmentError}>
+          {SearchEngineResultsFragment.render({ name: "Max Willmott" })}
+        </ErrorBoundary>
       </section>
     </div>
   );

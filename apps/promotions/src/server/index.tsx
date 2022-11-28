@@ -3,6 +3,7 @@ import React from "react";
 import { delayHandler, fragmentHandler, jsRouter } from "server-shared";
 import SearchEnginePromotions from "../components/SearchEnginePromotions";
 
+// throw new Error("Damn the promo service is down")
 const app = express();
 const port = process.env.PROMOTIONS_PORT ?? "No port passed";
 

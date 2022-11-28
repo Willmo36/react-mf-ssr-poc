@@ -1,4 +1,5 @@
 import React from "react";
+import { Loading } from "../components/Loading";
 import { SearchEnginePromotionsFragment } from "../fragments/SearchEnginePromotionsFragment";
 import { SearchEngineResultsFragment } from "../fragments/SearchEngineResultsFragment";
 

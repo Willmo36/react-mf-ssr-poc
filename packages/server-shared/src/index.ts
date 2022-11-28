@@ -10,7 +10,6 @@ import dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
 
 const config = dotenv.config({ path: "../../.env.development" });
-console.info("The config", config);
 dotenvExpand.expand(config);
 
 export const delayHandler =
@@ -34,6 +33,7 @@ export function fragmentHandler(
 
 export function jsRouter(app: Express) {
   if (process.env.NODE_ENV === "development") {
+  // if (false) {
     const webpack = require("webpack");
     const webpackDevMiddleware = require("webpack-dev-middleware");
     const webpackConfig = require(path.join(

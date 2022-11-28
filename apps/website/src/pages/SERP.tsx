@@ -4,18 +4,26 @@ import { SearchEngineResultsFragment } from "../fragments/SearchEngineResultsFra
 
 export const SERP = () => {
   return (
-    <div className="container">
-      <header className="header p-8 flex items-center justify-between">
-        <h1 className="logo">iWantGrub</h1>
-        <input
-          placeholder="Search for Restaurants..."
-          className="search_input w-1/2"
-          type="text"
-        />
+    <div className="">
+      <header className="header p-8 flex items-center justify-between bg-emerald-400">
+        <div>
+        <h1 className="text-4xl">ShareTheDishes</h1>
+        <p className="text-sm italic">Kickstarter for meal prep</p>
+        </div>
+        <form className="m-0 w-96">
+          <div className="">
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="search"
+              type="text"
+              placeholder="Search for meals..."
+            ></input>
+          </div>
+        </form>
         <h3>Sign in</h3>
       </header>
 
-      <section>
+      <section className="p-10">
         {SearchEnginePromotionsFragment.render({ query: "Max Willmott" })}
         {SearchEngineResultsFragment.render({ name: "Max Willmott" })}
       </section>

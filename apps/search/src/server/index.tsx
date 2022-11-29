@@ -14,7 +14,7 @@ app.get(
   fragmentHandler((req) => {
     // @ts-ignore
     const name = req.query["name"] as string;
-    return <SearchEngineResults name={name} />;
+    return <SearchEngineResults query={name} />;
   })
 );
 

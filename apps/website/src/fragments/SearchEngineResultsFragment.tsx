@@ -1,9 +1,12 @@
 import { FragmentRenderer, FragmentError } from "fragments";
+import { useAtomValue } from "jotai";
 import React from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { Loading } from "../components/Loading";
+import { SearchTermAtom } from "../components/SearchBar";
 
 export const SearchEngineResultsFragment = new FragmentRenderer<{
-  name: string;
+  query: string;
 }>(
   "http://localhost:3001/fragments/search",
   //@ts-ignore
@@ -11,3 +14,14 @@ export const SearchEngineResultsFragment = new FragmentRenderer<{
   <Loading text="Suspense streaming in Search HTML..." />,
   FragmentError
 );
+
+export const SearchEngineResultsPortal = () => {
+  const term = useAtomValue(SearchTermAtom);
+  console.info("SearchEngineResultsPortal::render", term)
+  return (
+    <ErrorBoundary FallbackComponent={FragmentError}>
+      {SearchEngineResultsFragment.render({ query: term })}
+    </ErrorBoundary>
+  );
+};
+

@@ -2,6 +2,7 @@ import { fetch } from "cross-fetch";
 import React, { ComponentType, Suspense } from "react";
 import { FallbackProps } from "react-error-boundary";
 export { FragmentError } from "./FragmentError";
+export { useFragmentInfo } from "./useFragmentInfo";
 
 const isServer = typeof window === "undefined";
 

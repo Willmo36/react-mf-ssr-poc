@@ -1,33 +1,27 @@
-import React, { useCallback, useEffect } from "react";
+import { useFragmentInfo } from "fragments";
+import React from "react";
 import { PromotionListViewData } from "../domain/Promotion";
 import { PromotionListView } from "./PromotionListView";
 
 const promo1: PromotionListViewData = {
   title: "You're on a roll!",
-  description: "Get a free meal when you order twice more by Sunday"
-}
+  description: "Get a free meal when you order twice more by Sunday",
+};
 const promo2: PromotionListViewData = {
   title: "Freshii Fanatic",
-  description: "Order 3 slots with Freshii, get 1 for free!"
-}
-const promos = [promo1, promo2, promo1, promo2]
+  description: "Order 3 slots with Freshii, get 1 for free!",
+};
+const promos = [promo1, promo2, promo1, promo2];
 
 export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
-  useEffect(() => {
-    console.info("SearchEnginePromotions::init");
-  });
-
-  const onclick = useCallback(() => {
-    console.info("SearchEngineResults::onclick");
-  }, []);
-
+  useFragmentInfo("SearchEnginePromotions", props);
   return (
     <div className="">
-      <h4 onClick={onclick} className="text-3xl font-bold ">
-        Promotions
-      </h4>
+      <h4 className="text-3xl font-bold ">Promotions</h4>
       <ul className="flex">
-        {promos.map(promo => <PromotionListView  {...promo} />)}
+        {promos.map((promo) => (
+          <PromotionListView {...promo} />
+        ))}
       </ul>
     </div>
   );

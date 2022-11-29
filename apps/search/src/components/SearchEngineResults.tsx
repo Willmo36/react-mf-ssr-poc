@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import { MealListViewData } from "../domain/Meal";
 import { MealListView } from "./MealListView";
+import {useFragmentInfo} from "fragments";
 
 const meal: MealListViewData = {
   supplier: "McDonalds",
@@ -13,18 +14,12 @@ const meal: MealListViewData = {
 }
 const meals: MealListViewData[] = new Array(5).fill(meal);
 
-export const SearchEngineResults: React.FC<{ name: string }> = (props) => {
-  useEffect(() => {
-    console.info("SearchEngineResults::init");
-  });
-
-  const onclick = useCallback(() => {
-    console.info("SearchEngineResults::onclick");
-  }, []);
+export const SearchEngineResults: React.FC<{ query: string }> = (props) => {
+  useFragmentInfo("SearchEngineResults", props);
 
   return (
     <div className="inline">
-      <h4 onClick={onclick} className="text-3xl font-bold ">
+      <h4 className="text-3xl font-bold ">
       Meals
       </h4>
       <ul>

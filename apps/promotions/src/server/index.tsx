@@ -12,7 +12,7 @@ jsRouter(app);
 app.get(
   "/fragments/search-promotions",
   delayHandler(Number(process.env.PROMOTIONS_DELAY) ?? 0),
-  fragmentHandler((req) => {
+  fragmentHandler("promotions", (req) => {
     // @ts-ignore
     const query = req.query["query"] as string;
     return <SearchEnginePromotions query={query} />;

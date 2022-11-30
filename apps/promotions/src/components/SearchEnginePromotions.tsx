@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { useFragmentInfo } from "fragments";
 import React from "react";
 import { PromotionListViewData } from "../domain/Promotion";
@@ -15,11 +16,12 @@ const promos = [promo1, promo2, promo1, promo2];
 
 export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEnginePromotions", props);
+  const promosQuery = useQuery({queryKey: ["promos", props.query], queryFn: () => Promise.resolve(promos)})
   return (
     <div className="">
       <h4 className="text-3xl font-bold ">Promotions</h4>
       <ul className="flex">
-        {promos.map((promo) => (
+        {promosQuery.data?.map((promo) => (
           <PromotionListView {...promo} />
         ))}
       </ul>

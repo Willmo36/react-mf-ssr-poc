@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 app.get(
   "/",
-  fragmentHandler(() => <Html />)
+  fragmentHandler("website", () => <Html />)
 );
 
 app.listen(port, () => {

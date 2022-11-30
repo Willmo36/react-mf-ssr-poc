@@ -16,6 +16,7 @@ module.exports = {
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },
+        "@tanstack/react-query": {singleton: true}
       },
     }),
   ],

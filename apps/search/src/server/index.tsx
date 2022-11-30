@@ -11,7 +11,7 @@ jsRouter(app);
 app.get(
   "/fragments/search",
   delayHandler(Number(process.env.SEARCH_DELAY) ?? 0),
-  fragmentHandler((req) => {
+  fragmentHandler("search", (req) => {
     // @ts-ignore
     const name = req.query["name"] as string;
     return <SearchEngineResults query={name} />;

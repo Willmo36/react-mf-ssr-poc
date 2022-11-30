@@ -17,7 +17,6 @@ export const SearchEnginePromotionsFragment = new FragmentRenderer<{
 
 export const SearchEnginePromotionsPortal = () => {
   const term = useAtomValue(SearchTermAtom);
-  console.info("SearchEnginePromotionsPortal::render", term)
   return (
     <ErrorBoundary FallbackComponent={FragmentError}>
       {SearchEnginePromotionsFragment.render({ query: term })}

@@ -1,4 +1,4 @@
-import { QueryClient, dehydrate, Query } from "@tanstack/react-query";
+import { Query, QueryClient } from "@tanstack/react-query";
 import { Writable } from "node:stream";
 
 export class ReactPipeableWithHydration extends Writable {
@@ -17,12 +17,6 @@ export class ReactPipeableWithHydration extends Writable {
     if (this._writable.destroyed) {
       return;
     }
-    // console.info("CHUNK", chunk.toString());
-    // this._writable.write(chunk, encoding, next);
-    // console.info("CHUCK-RQ", this.queryClient.getQueryCache().getAll());
-    // const dehydrated = dehydrate(this.queryClient, {shouldDehydrateQuery: () => true}).queries;
-    // const hydrateScript = `<script data-hydrate-me type="application/json">${JSON.stringify(dehydrated)}</script>`
-    // this._writable.write(hydrateScript);
     const queryClientCache = this.queryClient.getQueryCache().getAll() as Array<
       Query<unknown, unknown>
     >;
@@ -36,12 +30,12 @@ export class ReactPipeableWithHydration extends Writable {
         this.queriesCache.push(queryToDehydrate.queryHash);
 
         const randomScriptElementVarName = generateRandomId("__script");
-        const queryHash = JSON.stringify(queryToDehydrate.queryHash);
+        const queryHash = queryToDehydrate.queryKey.join("-")
         const queryData = JSON.stringify({
           queries: [dehydrateQuery(queryToDehydrate)],
         });
         const scriptContent = JSON.stringify(
-          `window[${queryHash}] = ${queryData}`
+          `window["${queryHash}"] = ${queryData}`
         );
         this._writable.write(
           wrapWithImmediateScript(`

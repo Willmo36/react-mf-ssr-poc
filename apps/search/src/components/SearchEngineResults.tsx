@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MealListViewData } from "../domain/Meal";
 import { MealListView } from "./MealListView";
 import { useFragmentInfo } from "fragments";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, hashQueryKey } from "@tanstack/react-query";
 
 const meal: MealListViewData = {
   supplier: "McDonalds",
@@ -17,14 +17,19 @@ const meals_db: MealListViewData[] = new Array(5).fill(meal);
 
 export const SearchEngineResults: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEngineResults", props);
+  const queryKey = ["search", props.query];
   const mealsQuery = useQuery({
-    queryKey: ["search", props.query],
+    queryKey,
     queryFn: (qk) => {
-      console.info("executing RQ")
+      console.info("executing RQ");
       return Promise.resolve(meals_db);
     },
   });
-  console.info("Meals Query", mealsQuery.status)
+  useEffect(() => {
+    const queryHash = `${queryKey.join("-")}`;
+    // @ts-ignore
+    const result = window[queryHash];
+  }, []);
 
   return (
     <div className="inline">

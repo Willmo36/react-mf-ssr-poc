@@ -13,8 +13,8 @@ app.get(
   delayHandler(Number(process.env.SEARCH_DELAY) ?? 0),
   fragmentHandler("search", (req) => {
     // @ts-ignore
-    const name = req.query["name"] as string;
-    return <SearchEngineResults query={name} />;
+    const query = req.query["query"] as string;
+    return <SearchEngineResults query={query} />;
   })
 );
 

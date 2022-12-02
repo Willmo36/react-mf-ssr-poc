@@ -42,16 +42,9 @@ export function fragmentHandler(
       },
     });
     const comp = render(req);
-    // need to wait for inner queries to all resolve...
-    const queryStateDump = JSON.stringify(dehydrate(qc).queries);
     const renderResult = (
       <QueryClientProvider client={qc}>
         {comp}
-        <script
-          id={fragmentId}
-          type="application/json"
-          dangerouslySetInnerHTML={{ __html: queryStateDump }}
-        ></script>
       </QueryClientProvider>
     );
 

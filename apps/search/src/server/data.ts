@@ -23,9 +23,12 @@ const meals_db: MealListViewData[] = [meal, meal2];
 export const queryMeals = async (
   query: string
 ): Promise<MealListViewData[]> => {
+  console.log("on the server", query, process.env.SERVER);
   if (!!process.env.SERVER) {
     return Promise.resolve(
-      meals_db.filter((meal) => meal.mealTitle.includes(query))
+      meals_db.filter((meal) => {
+        return meal.supplier.toLowerCase().startsWith(query);
+      })
     );
   } else {
     const res = await fetch(`http://localhost:3001/query?query=${query}`);

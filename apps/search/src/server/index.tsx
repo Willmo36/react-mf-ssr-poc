@@ -23,7 +23,7 @@ app.get(
 
 app.get("/query", async (req, res) => {
   const query = req.query["query"] as string;
-  const meals = await queryMeals(query ?? "");
+  const meals = await queryMeals(query);
   res.json(meals);
 });
 

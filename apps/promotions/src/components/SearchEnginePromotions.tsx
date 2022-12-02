@@ -28,21 +28,17 @@ const customQueryKeyHashFn: QueryKeyHashFunction<string[]> = (qk) =>
 export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEnginePromotions", props);
 
-  const queryClient = useQueryClient();
   const queryKey = ["promos", props.query];
+  const queryClient = useQueryClient();
   const queryHash = customQueryKeyHashFn(queryKey);
   if (!isServer) {
     const result = (window as any)[queryHash];
     hydrate(queryClient, result);
   }
 
-  console.info("Query cache", {
-    queryKey,
-    queryHash,
-    cache: queryClient.getQueryCache().getAll(),
-  });
   const promosQuery = useQuery({
     queryKey,
+    staleTime: 1000 * 30, 
     queryFn: () => Promise.resolve(promos),
     queryKeyHashFn: customQueryKeyHashFn
   });

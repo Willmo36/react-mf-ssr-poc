@@ -24,7 +24,7 @@ const meal2: MealListViewData = {
 };
 const meals_db: MealListViewData[] = [meal, meal2];
 
-export const SearchEngineResults: React.FC<{ query: string }> = (props) => {
+export const MealSearchResults: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEngineResults", props);
   const queryClient = useQueryClient();
   const queryKey = ["search", props.query];
@@ -49,4 +49,4 @@ export const SearchEngineResults: React.FC<{ query: string }> = (props) => {
   );
 };
 
-export default memo(SearchEngineResults);;
+export default memo(MealSearchResults);;

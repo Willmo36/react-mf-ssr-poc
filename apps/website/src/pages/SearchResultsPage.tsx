@@ -1,11 +1,11 @@
 import React from "react";
 import { SearchBar } from "../components/SearchBar";
 import {
-  SearchEnginePromotionsPortal
-} from "../fragments/SearchEnginePromotionsFragment";
-import { SearchEngineResultsPortal } from "../fragments/SearchEngineResultsFragment";
+  PromotionSearchResultsPortal
+} from "../fragments/PromotionSearchResults";
+import { MealSearchResultsPortal } from "../fragments/MealSearchResults";
 
-export const SERP = () => {
+export const SearchResultsPage = () => {
   return (
     <div className="">
       <header className="header p-8 flex items-center justify-between bg-emerald-400">
@@ -18,8 +18,8 @@ export const SERP = () => {
       </header>
 
       <section className="p-10">
-        <SearchEnginePromotionsPortal />
-        <SearchEngineResultsPortal />
+        <PromotionSearchResultsPortal />
+        <MealSearchResultsPortal />
       </section>
     </div>
   );

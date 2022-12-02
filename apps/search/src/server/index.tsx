@@ -1,7 +1,7 @@
 import express from "express";
 import React from "react";
 import { delayHandler, fragmentHandler, jsRouter } from "server-shared";
-import SearchEngineResults from "../components/SearchEngineResults";
+import MealSearchResults from "../components/MealSearchResults";
 
 const app = express();
 const port = process.env.SEARCH_PORT ?? "No port passed";
@@ -14,7 +14,7 @@ app.get(
   fragmentHandler("search", (req) => {
     // @ts-ignore
     const query = req.query["query"] as string;
-    return <SearchEngineResults query={query} />;
+    return <MealSearchResults query={query} />;
   })
 );
 

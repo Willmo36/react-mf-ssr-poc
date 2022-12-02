@@ -10,7 +10,7 @@ module.exports = {
       name: "promotions",
       filename: "remoteEntry.js",
       exposes: {
-        "./SearchEnginePromotions": "./src/components/SearchEnginePromotions.tsx",
+        "./PromotionSearchResults": "./src/components/PromotionSearchResults.tsx",
       },
       shared: {
         react: { singleton: true },

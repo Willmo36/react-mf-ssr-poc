@@ -19,8 +19,8 @@ const promo2: PromotionListViewData = {
 };
 const promos = [promo1, promo2];
 
-export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
-  useFragmentInfo("SearchEnginePromotions", props);
+export const PromotionSearchResults: React.FC<{ query: string }> = (props) => {
+  useFragmentInfo("PromotionSearchResults", props);
 
   const queryKey = ["promos", props.query];
   const queryClient = useQueryClient();
@@ -45,4 +45,4 @@ export const SearchEnginePromotions: React.FC<{ query: string }> = (props) => {
   );
 };
 
-export default SearchEnginePromotions;
+export default PromotionSearchResults;

@@ -1,7 +1,7 @@
 import express from "express";
 import React from "react";
 import { delayHandler, fragmentHandler, jsRouter } from "server-shared";
-import SearchEnginePromotions from "../components/SearchEnginePromotions";
+import PromotionSearchResults from "../components/PromotionSearchResults";
 
 // throw new Error("Damn the promo service is down")
 const app = express();
@@ -15,7 +15,7 @@ app.get(
   fragmentHandler("promotions", (req) => {
     // @ts-ignore
     const query = req.query["query"] as string;
-    return <SearchEnginePromotions query={query} />;
+    return <PromotionSearchResults query={query} />;
   })
 );
 

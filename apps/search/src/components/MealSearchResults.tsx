@@ -5,7 +5,6 @@ import {
   simpleQueryKeyHash,
   useFragmentInfo,
 } from "shared";
-import { MealListViewData } from "../domain/Meal";
 import { queryMeals } from "../server/data";
 import { MealListView } from "./MealListView";
 

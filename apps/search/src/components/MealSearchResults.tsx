@@ -2,6 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { memo } from "react";
 import { hydrateQueryClient, simpleQueryKeyHash, useFragmentInfo } from "shared";
 import { MealListViewData } from "../domain/Meal";
+import { queryMeals } from "../server/data";
 import { MealListView } from "./MealListView";
 
 const meal: MealListViewData = {
@@ -34,7 +35,7 @@ export const MealSearchResults: React.FC<{ query: string }> = (props) => {
     queryKey,
     staleTime: 1000 * 30, 
     queryKeyHashFn: simpleQueryKeyHash,
-    queryFn: () => Promise.resolve(meals_db),
+    queryFn: (qk) => queryMeals(qk.queryKey[1] as any),
   });
 
   return (
@@ -49,4 +50,4 @@ export const MealSearchResults: React.FC<{ query: string }> = (props) => {
   );
 };
 
-export default memo(MealSearchResults);;
+export default (MealSearchResults);;

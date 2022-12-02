@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rm -rf dist",
-		"_dev": "nodemon -x 'ts-node --project ./tsconfig.server.json' src/server/index.tsx",
+		"_dev": "SERVER=true nodemon -x 'ts-node --project ./tsconfig.server.json' src/server/index.tsx",
 		"dev:stream": "RENDER_TYPE=stream yarn _dev",
 		"dev:static": " yarn _dev",
 		"build:client": "npx webpack build --mode=production",

@@ -16,10 +16,11 @@ export const MealSearchResultsFragment = new FragmentRenderer<{
 );
 
 export const MealSearchResultsPortal = () => {
-  const term = useAtomValue(SearchTermAtom);
+  const query = useAtomValue(SearchTermAtom);
+  console.info("Query changed", query)
   return (
     <ErrorBoundary FallbackComponent={FragmentError}>
-      {MealSearchResultsFragment.render({ query: term })}
+      {MealSearchResultsFragment.render({ query })}
     </ErrorBoundary>
   );
 };

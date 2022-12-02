@@ -1,7 +1,7 @@
 import React from "react";
 import { atom, useAtom } from "jotai";
 
-export const SearchTermAtom = atom("Calgary");
+export const SearchTermAtom = atom("");
 
 export const SearchBar: React.FC = () => {
   const [term, setTerm] = useAtom(SearchTermAtom);

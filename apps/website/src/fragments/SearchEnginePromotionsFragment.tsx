@@ -1,5 +1,5 @@
 import { ErrorBoundary } from "react-error-boundary";
-import { FragmentRenderer, FragmentError } from "fragments";
+import { FragmentRenderer, FragmentError } from "../../../../packages/shared/src";
 import React from "react";
 import { Loading } from "../components/Loading";
 import { useAtomValue } from "jotai";

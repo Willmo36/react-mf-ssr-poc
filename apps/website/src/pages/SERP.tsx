@@ -18,7 +18,7 @@ export const SERP = () => {
       </header>
 
       <section className="p-10">
-        {/* <SearchEnginePromotionsPortal /> */}
+        <SearchEnginePromotionsPortal />
         <SearchEngineResultsPortal />
       </section>
     </div>

@@ -1,15 +1,8 @@
-import React, { memo, useEffect } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import React, { memo } from "react";
+import { hydrateQueryClient, simpleQueryKeyHash, useFragmentInfo } from "shared";
 import { MealListViewData } from "../domain/Meal";
 import { MealListView } from "./MealListView";
-import { useFragmentInfo } from "fragments";
-import {
-  useQuery,
-  hashQueryKey,
-  hydrate,
-  useQueryClient,
-  isServer,
-  QueryKeyHashFunction,
-} from "@tanstack/react-query";
 
 const meal: MealListViewData = {
   supplier: "McDonalds",
@@ -31,27 +24,19 @@ const meal2: MealListViewData = {
 };
 const meals_db: MealListViewData[] = [meal, meal2];
 
-const customQueryKeyHashFn: QueryKeyHashFunction<string[]> = (qk) =>
-  `${qk.join("-")}`;
 export const SearchEngineResults: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEngineResults", props);
   const queryClient = useQueryClient();
   const queryKey = ["search", props.query];
-  const queryHash = customQueryKeyHashFn(queryKey);
-  if (!isServer) {
-    const result = (window as any)[queryHash];
-    hydrate(queryClient, result);
-  }
+  hydrateQueryClient(queryClient, queryKey);
 
   const mealsQuery = useQuery({
     queryKey,
     staleTime: 1000 * 30, 
-    queryKeyHashFn: customQueryKeyHashFn,
-    queryFn: (qk) => {
-      return Promise.resolve(meals_db);
-    },
+    queryKeyHashFn: simpleQueryKeyHash,
+    queryFn: () => Promise.resolve(meals_db),
   });
-  console.info("Query status", mealsQuery.status);
+
   return (
     <div className="inline">
       <h4 className="text-3xl font-bold ">Meals</h4>

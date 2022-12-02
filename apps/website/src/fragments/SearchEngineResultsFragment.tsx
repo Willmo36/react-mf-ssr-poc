@@ -1,4 +1,4 @@
-import { FragmentRenderer, FragmentError } from "fragments";
+import { FragmentRenderer, FragmentError } from "../../../../packages/shared/src";
 import { useAtomValue } from "jotai";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";

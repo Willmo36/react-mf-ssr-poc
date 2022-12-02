@@ -3,6 +3,7 @@ const baseConfig = require("../../webpack.base.config");
 
 module.exports = {
   ...baseConfig,
+  mode: 'development',
   entry: "./src/client/index.tsx",
   plugins: [
     new ModuleFederationPlugin({

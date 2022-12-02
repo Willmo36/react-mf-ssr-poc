@@ -6,7 +6,6 @@ import {
 import { SearchEngineResultsPortal } from "../fragments/SearchEngineResultsFragment";
 
 export const SERP = () => {
-  console.info("SERP render");
   return (
     <div className="">
       <header className="header p-8 flex items-center justify-between bg-emerald-400">
@@ -19,7 +18,7 @@ export const SERP = () => {
       </header>
 
       <section className="p-10">
-        <SearchEnginePromotionsPortal />
+        {/* <SearchEnginePromotionsPortal /> */}
         <SearchEngineResultsPortal />
       </section>
     </div>

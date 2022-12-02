@@ -1,4 +1,4 @@
-import { Query, QueryClient } from "@tanstack/react-query";
+import { Query, QueryClient, QueryKeyHashFunction } from "@tanstack/react-query";
 import { Writable } from "node:stream";
 
 export class ReactPipeableWithHydration extends Writable {
@@ -30,7 +30,7 @@ export class ReactPipeableWithHydration extends Writable {
         this.queriesCache.push(queryToDehydrate.queryHash);
 
         const randomScriptElementVarName = generateRandomId("__script");
-        const queryHash = queryToDehydrate.queryKey.join("-")
+        const queryHash = customQueryKeyHashFn(queryToDehydrate.queryKey as string[]);
         const queryData = JSON.stringify({
           queries: [dehydrateQuery(queryToDehydrate)],
         });
@@ -59,6 +59,9 @@ export class ReactPipeableWithHydration extends Writable {
     }
   }
 }
+
+const customQueryKeyHashFn: QueryKeyHashFunction<string[]> = (qk) =>
+  `${qk.join("-")}`;
 
 function wrapWithImmediateScript(code: string) {
   const randomScriptId = generateRandomId();

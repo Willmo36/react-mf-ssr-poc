@@ -7,6 +7,7 @@ export const MealListView: React.FC<MealListViewData> = ({
   description,
   quotaCurrent,
   quotaMin,
+  buyIn
 }) => {
   const remaining = useMemo(() => {
     if (quotaCurrent < quotaMin) {
@@ -17,14 +18,14 @@ export const MealListView: React.FC<MealListViewData> = ({
   }, [quotaCurrent, quotaMin]);
 
   const hBookClick = () => {
-    alert("Hydrated remote module handler - You clicked book!")
+    alert(`Hydrated click handler - You pay ${buyIn}`)
   }
 
   return (
     <div className="flex justify-between items-center p-5 m-5 border-solid border-2 border-emerald-400 rounded drop-shadow-sm">
       <div className="flex flex-col">
         <h4 className="text-xl">
-          {supplier} - {mealTitle}
+          {supplier} - {mealTitle} - ${buyIn}
         </h4>
         <p className="text-md">{description}</p>
       </div>

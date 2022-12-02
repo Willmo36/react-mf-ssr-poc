@@ -1,23 +1,12 @@
-import {
-  useQuery,
-  useQueryClient
-} from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { hydrateQueryClient, simpleQueryKeyHash, useFragmentInfo } from "shared";
-import { PromotionListViewData } from "../domain/Promotion";
+import {
+  hydrateQueryClient,
+  simpleQueryKeyHash,
+  useFragmentInfo,
+} from "shared";
+import { queryPromotions } from "../server/data";
 import { PromotionListView } from "./PromotionListView";
-
-const promo1: PromotionListViewData = {
-  title: "You're on a roll!",
-  description: "Get a free meal when you order twice more by Sunday",
-  id: Math.floor(Math.random() * 100),
-};
-const promo2: PromotionListViewData = {
-  title: "Freshii Fanatic",
-  description: "Order 3 slots with Freshii, get 1 for free!",
-  id: Math.floor(Math.random() * 100),
-};
-const promos = [promo1, promo2];
 
 export const PromotionSearchResults: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("PromotionSearchResults", props);
@@ -28,9 +17,9 @@ export const PromotionSearchResults: React.FC<{ query: string }> = (props) => {
 
   const promosQuery = useQuery({
     queryKey,
-    staleTime: 1000 * 30, 
-    queryFn: () => Promise.resolve(promos),
-    queryKeyHashFn: simpleQueryKeyHash
+    staleTime: 1000 * 30,
+    queryFn: ({ queryKey }) => queryPromotions(queryKey[1]),
+    queryKeyHashFn: simpleQueryKeyHash,
   });
 
   return (
@@ -40,6 +29,9 @@ export const PromotionSearchResults: React.FC<{ query: string }> = (props) => {
         {promosQuery.data?.map((promo) => (
           <PromotionListView key={promo.title} {...promo} />
         ))}
+        {promosQuery.data?.length === 0 ? (
+          <p className="mb-5">No promotions found for "{props.query}"</p>
+        ) : null}
       </ul>
     </div>
   );

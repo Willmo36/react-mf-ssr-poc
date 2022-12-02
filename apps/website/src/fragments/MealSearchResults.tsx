@@ -17,7 +17,6 @@ export const MealSearchResultsFragment = new FragmentRenderer<{
 
 export const MealSearchResultsPortal = () => {
   const query = useAtomValue(SearchTermAtom);
-  console.info("Query changed", query)
   return (
     <ErrorBoundary FallbackComponent={FragmentError}>
       {MealSearchResultsFragment.render({ query })}

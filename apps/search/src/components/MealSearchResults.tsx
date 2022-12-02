@@ -1,29 +1,13 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { memo } from "react";
-import { hydrateQueryClient, simpleQueryKeyHash, useFragmentInfo } from "shared";
+import React from "react";
+import {
+  hydrateQueryClient,
+  simpleQueryKeyHash,
+  useFragmentInfo,
+} from "shared";
 import { MealListViewData } from "../domain/Meal";
 import { queryMeals } from "../server/data";
 import { MealListView } from "./MealListView";
-
-const meal: MealListViewData = {
-  supplier: "McDonalds",
-  mealTitle: "McMassive breakfast order",
-  buyIn: Math.random() * 50,
-  description: "1 week of McDonalds breakfast burgers",
-  quotaMin: 10,
-  quotaCurrent: 8,
-  imgUrl: "foobar",
-};
-const meal2: MealListViewData = {
-  supplier: "A&W",
-  mealTitle: "Fancy McBreakfast",
-  buyIn: Math.random() * 50,
-  description: "Like McDonalds but twice the price",
-  quotaMin: 10,
-  quotaCurrent: 8,
-  imgUrl: "foobar",
-};
-const meals_db: MealListViewData[] = [meal, meal2];
 
 export const MealSearchResults: React.FC<{ query: string }> = (props) => {
   useFragmentInfo("SearchEngineResults", props);
@@ -33,7 +17,7 @@ export const MealSearchResults: React.FC<{ query: string }> = (props) => {
 
   const mealsQuery = useQuery({
     queryKey,
-    staleTime: 1000 * 30, 
+    staleTime: 1000 * 30,
     queryKeyHashFn: simpleQueryKeyHash,
     queryFn: (qk) => queryMeals(qk.queryKey[1] as any),
   });
@@ -46,8 +30,11 @@ export const MealSearchResults: React.FC<{ query: string }> = (props) => {
           <MealListView key={meal.mealTitle} {...meal} />
         ))}
       </ul>
+      {mealsQuery.data?.length === 0 ? (
+        <p className="mb-5">No meals found for "{props.query}"</p>
+      ) : null}
     </div>
   );
 };
 
-export default (MealSearchResults);;
+export default MealSearchResults;

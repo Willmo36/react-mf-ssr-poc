@@ -1,4 +1,6 @@
-const { ModuleFederationPlugin } = require("webpack").container;
+const webpack = require('webpack');
+const { ModuleFederationPlugin } = webpack.container;
+const DefinePlugin = webpack.DefinePlugin;
 const baseConfig = require("../../webpack.base.config");
 
 module.exports = {
@@ -18,5 +20,8 @@ module.exports = {
         "@tanstack/react-query": {singleton: true}
       },
     }),
+    new DefinePlugin({
+      'process.env.SERVER': false
+    })
   ],
 };

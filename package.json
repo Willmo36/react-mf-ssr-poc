@@ -1,10 +1,8 @@
 {
-  "name": "react-ssr-mf",
+  "name": "react-mf-ssr-poc",
   "private": true,
   "version": "0.0.1",
-  "packageManager": "yarn@3.3.0",
-  "description": "Monorepo of React apps coming together for SSR",
-  "main": "index.js",
+  "description": "Experiements with server side rendering React microfrontends with hydration",
   "author": "Max Willmott <max.willmo@gmail.com>",
   "license": "MIT",
   "workspaces": [
@@ -12,7 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:stream": "turbo dev:stream",
+    "dev": "turbo dev",
     "dev:static": "turbo dev:static",
     "build:server:static": "turbo build:server:static",
     "build:server:stream": "turbo build:server:stream",

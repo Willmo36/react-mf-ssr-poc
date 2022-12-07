@@ -1,18 +1,14 @@
-import {
-  QueryClientProvider,
-  QueryClient,
-  dehydrate,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import dotenv from "dotenv";
+import dotenvExpand from "dotenv-expand";
+import type { Express, Handler, Request } from "express";
+import express from "express";
 import path from "path";
 import React from "react";
-import type { Handler, Request, Express } from "express";
-import express from "express";
 import {
   renderToPipeableStream,
   renderToStaticNodeStream,
 } from "react-dom/server";
-import dotenv from "dotenv";
-import dotenvExpand from "dotenv-expand";
 import { ReactPipeableWithHydration } from "./ReactPipeableWithHydration";
 
 const config = dotenv.config({ path: "../../.env.development" });
@@ -23,11 +19,6 @@ export const delayHandler =
   (_rq, _rs, next) => {
     setTimeout(next, ms);
   };
-
-// export const renderMethod =
-//   process.env.RENDER_TYPE === "stream"
-//     ? renderToPipeableStream
-//     : renderToStaticNodeStream;
 
 export function fragmentHandler(
   fragmentId: string,
@@ -43,23 +34,25 @@ export function fragmentHandler(
     });
     const comp = render(req);
     const renderResult = (
-      <QueryClientProvider client={qc}>
-        {comp}
-      </QueryClientProvider>
+      <QueryClientProvider client={qc}>{comp}</QueryClientProvider>
     );
 
-    const pipeableStream = renderToPipeableStream(renderResult);
-    const writableStream = new ReactPipeableWithHydration(res, qc);
-    pipeableStream.pipe(writableStream);
-    writableStream.once("finish", () => {
-      res.end();
-    });
+    if (process.env.STATIC) {
+      console.warn("Hydration not implemented for STATIC rendering demo");
+      renderToStaticNodeStream(renderResult).pipe(res);
+    } else {
+      const pipeableStream = renderToPipeableStream(renderResult);
+      const writableStream = new ReactPipeableWithHydration(res, qc);
+      pipeableStream.pipe(writableStream);
+      writableStream.once("finish", () => {
+        res.end();
+      });
+    }
   };
 }
 
 export function jsRouter(app: Express) {
   if (process.env.NODE_ENV === "development") {
-    // if (false) {
     const webpack = require("webpack");
     const webpackDevMiddleware = require("webpack-dev-middleware");
     const webpackConfig = require(path.join(

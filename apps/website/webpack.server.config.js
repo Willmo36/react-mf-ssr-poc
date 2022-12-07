@@ -35,7 +35,7 @@ module.exports = {
       resourceRegExp: /webpack$|webpack-dev-server$/,
     }),
     new webpack.DefinePlugin({
-      "process.env.RENDER_TYPE": JSON.stringify(process.env.RENDER_TYPE)
+      "process.env.STATIC": JSON.stringify(process.env.STATIC)
     })
   ],
 };

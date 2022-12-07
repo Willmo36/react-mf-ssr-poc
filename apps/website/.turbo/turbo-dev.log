@@ -1,0 +1,232 @@
+$ yarn _dev
+$ nodemon -x 'ts-node --project ./tsconfig.server.json' src/server/index.tsx
+[33m[nodemon] 2.0.20[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: tsx,json[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+Website on port 3000
+assets by chunk 1.35 MiB (id hint: vendors)
+  asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_tanstack_react-query_build_lib_index_mjs.bundle.js 185 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js-no-19651f.bundle.js 53 KiB [emitted] (id hint: vendors)
+asset bundle.js 36.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_-568c46.bundle.js 25.9 KiB [emitted]
+runtime modules 24.9 KiB 15 modules
+orphan modules 426 bytes (javascript) 42 bytes (consume-shared) [orphan] 3 modules
+cacheable modules 1.25 MiB 61 modules
+consume-shared-module modules 336 bytes
+  modules by path consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/*.js) 84 bytes 2 modules
+  + 6 modules
+provide-module modules 126 bytes
+  provide shared module (default) @tanstack/react-query@4.18.0 = ../../node_modules/@tanstack/react-query/build/lib/index.mjs 42 bytes [built] [code generated]
+  provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
+  provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+remote-module modules 12 bytes (remote) 12 bytes (share-init)
+  remote promotions/PromotionSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+  remote search/MealSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+external "promotions@http://localhost:3002/js/remoteEntry.js" 42 bytes [built] [code generated]
+external "search@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/apps/website/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react-dom
+No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+webpack 5.75.0 compiled with 6 warnings in 1566 ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+Website on port 3000
+<i> [webpack-dev-middleware] wait until bundle finished: /bundle.js
+assets by chunk 1.35 MiB (id hint: vendors)
+  asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_tanstack_react-query_build_lib_index_mjs.bundle.js 185 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js-no-19651f.bundle.js 53 KiB [emitted] (id hint: vendors)
+asset bundle.js 36.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_-568c46.bundle.js 26 KiB [emitted]
+runtime modules 24.9 KiB 15 modules
+orphan modules 426 bytes (javascript) 42 bytes (consume-shared) [orphan] 3 modules
+cacheable modules 1.25 MiB 61 modules
+consume-shared-module modules 336 bytes
+  modules by path consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/*.js) 84 bytes 2 modules
+  + 6 modules
+provide-module modules 126 bytes
+  provide shared module (default) @tanstack/react-query@4.18.0 = ../../node_modules/@tanstack/react-query/build/lib/index.mjs 42 bytes [built] [code generated]
+  provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
+  provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+remote-module modules 12 bytes (remote) 12 bytes (share-init)
+  remote promotions/PromotionSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+  remote search/MealSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+external "promotions@http://localhost:3002/js/remoteEntry.js" 42 bytes [built] [code generated]
+external "search@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/apps/website/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react-dom
+No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+webpack 5.75.0 compiled with 6 warnings in 1464 ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+Website on port 3000
+assets by chunk 1.35 MiB (id hint: vendors)
+  asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_tanstack_react-query_build_lib_index_mjs.bundle.js 185 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js-no-19651f.bundle.js 53 KiB [emitted] (id hint: vendors)
+asset bundle.js 36.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_-568c46.bundle.js 26 KiB [emitted]
+runtime modules 24.9 KiB 15 modules
+orphan modules 426 bytes (javascript) 42 bytes (consume-shared) [orphan] 3 modules
+cacheable modules 1.25 MiB 61 modules
+consume-shared-module modules 336 bytes
+  modules by path consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/*.js) 84 bytes 2 modules
+  + 6 modules
+provide-module modules 126 bytes
+  provide shared module (default) @tanstack/react-query@4.18.0 = ../../node_modules/@tanstack/react-query/build/lib/index.mjs 42 bytes [built] [code generated]
+  provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
+  provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+remote-module modules 12 bytes (remote) 12 bytes (share-init)
+  remote promotions/PromotionSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+  remote search/MealSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+external "promotions@http://localhost:3002/js/remoteEntry.js" 42 bytes [built] [code generated]
+external "search@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/apps/website/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react-dom
+No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+webpack 5.75.0 compiled with 6 warnings in 1447 ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+Website on port 3000
+assets by chunk 1.35 MiB (id hint: vendors)
+  asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_tanstack_react-query_build_lib_index_mjs.bundle.js 185 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js-no-19651f.bundle.js 53 KiB [emitted] (id hint: vendors)
+asset bundle.js 36.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_-568c46.bundle.js 26.1 KiB [emitted]
+runtime modules 24.9 KiB 15 modules
+orphan modules 426 bytes (javascript) 42 bytes (consume-shared) [orphan] 3 modules
+cacheable modules 1.25 MiB 61 modules
+consume-shared-module modules 336 bytes
+  modules by path consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/*.js) 84 bytes 2 modules
+  + 6 modules
+provide-module modules 126 bytes
+  provide shared module (default) @tanstack/react-query@4.18.0 = ../../node_modules/@tanstack/react-query/build/lib/index.mjs 42 bytes [built] [code generated]
+  provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
+  provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+remote-module modules 12 bytes (remote) 12 bytes (share-init)
+  remote promotions/PromotionSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+  remote search/MealSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+external "promotions@http://localhost:3002/js/remoteEntry.js" 42 bytes [built] [code generated]
+external "search@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/apps/website/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react-dom
+No required version specified and unable to automatically determine one. Unable to find required version for "react-dom" in description file (/Users/max.willmott/code/react-ssr-mf/node_modules/react-dom/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+webpack 5.75.0 compiled with 6 warnings in 1426 ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node --project ./tsconfig.server.json src/server/index.tsx`[39m
+Website on port 3000
+<i> [webpack-dev-middleware] wait until bundle finished: /bundle.js
+assets by chunk 1.35 MiB (id hint: vendors)
+  asset vendors-node_modules_react-dom_index_js.bundle.js 1.03 MiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_tanstack_react-query_build_lib_index_mjs.bundle.js 185 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_react_index_js.bundle.js 89.9 KiB [emitted] (id hint: vendors)
+  asset vendors-node_modules_cross-fetch_dist_browser-ponyfill_js-node_modules_react-dom_client_js-no-19651f.bundle.js 53 KiB [emitted] (id hint: vendors)
+asset bundle.js 36.9 KiB [emitted] (name: main)
+asset src_client_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom-webpack_sharing_-568c46.bundle.js 26.2 KiB [emitted]
+runtime modules 24.9 KiB 15 modules
+orphan modules 426 bytes (javascript) 42 bytes (consume-shared) [orphan] 3 modules
+cacheable modules 1.25 MiB 61 modules
+consume-shared-module modules 336 bytes
+  modules by path consume shared module (default) react@* (singleton) (fallback: ../../node_modules/react/*.js) 84 bytes 2 modules
+  + 6 modules
+provide-module modules 126 bytes
+  provide shared module (default) @tanstack/react-query@4.18.0 = ../../node_modules/@tanstack/react-query/build/lib/index.mjs 42 bytes [built] [code generated]
+  provide shared module (default) react-dom@18.2.0 = ../../node_modules/react-dom/index.js 42 bytes [built] [code generated]
+  provide shared module (default) react@18.2.0 = ../../node_modules/react/index.js 42 bytes [built] [code generated]
+remote-module modules 12 bytes (remote) 12 bytes (share-init)
+  remote promotions/PromotionSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+  remote search/MealSearchResults 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
+external "promotions@http://localhost:3002/js/remoteEntry.js" 42 bytes [built] [code generated]
+external "search@http://localhost:3001/js/remoteEntry.js" 42 bytes [built] [code generated]
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/apps/website/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module @tanstack/react-query
+No required version specified and unable to automatically determine one. Unable to find required version for "@tanstack/react-query" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react
+No required version specified and unable to automatically determine one. Unable to find required version for "react" in description file (/Users/max.willmott/code/react-ssr-mf/packages/shared/package.json). It need to be in dependencies, devDependencies or peerDependencies.
+
+WARNING in shared module react-dom
+No required version specified and unable to automatically determine one. Un

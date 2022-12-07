@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { MealListViewData } from "../domain/Meal";
 
+
 export const MealListView: React.FC<MealListViewData> = ({
   supplier,
   mealTitle,

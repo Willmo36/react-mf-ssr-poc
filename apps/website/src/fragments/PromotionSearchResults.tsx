@@ -5,13 +5,14 @@ import { FragmentError, FragmentRenderer } from "shared";
 import { Loading } from "../components/Loading";
 import { SearchTermAtom } from "../components/SearchBar";
 
+const loadingText = `Suspense streaming in Promotions HTML with ${process.env.PROMOTIONS_DELAY ?? 0}ms delay...`
 export const PromotionSearchResultsFragment = new FragmentRenderer<{
   query: string;
 }>(
   "http://localhost:3002/fragments/search-promotions",
   //@ts-ignore
   () => import("promotions/PromotionSearchResults"),
-  <Loading text="Suspense streaming in Promotions HTML..." />,
+  <Loading text={loadingText}/>,
   FragmentError
 );
 

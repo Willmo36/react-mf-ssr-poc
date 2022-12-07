@@ -9,12 +9,12 @@
 	"scripts": {
 		"clean": "rm -rf dist",
 		"_dev": "nodemon -x 'ts-node --project ./tsconfig.server.json' src/server/index.tsx",
-		"dev:stream": "RENDER_TYPE=stream yarn _dev",
-		"dev:static": "yarn _dev",
+		"dev:static": "STATIC=true yarn _dev",
+		"dev": "yarn _dev",
 		"build:client": "npx webpack build --mode=production",
 		"_build:client:copy": "yarn build:client && cp -r ./dist ./server_dist",
 		"build:server:static": "yarn _build:client:copy && npx webpack build --config ./webpack.server.config.js",
-		"build:server:stream": "yarn _build:client:copy && RENDER_TYPE=stream npx webpack build --config ./webpack.server.config.js",
+		"build:server:stream": "yarn _build:client:copy && STATIC=true npx webpack build --config ./webpack.server.config.js",
 		"start:server": "node server_dist/server.js"
 	},
 	"dependencies": {

@@ -34,11 +34,11 @@ export class FragmentRenderer<Props extends Record<string, any>> {
       const propsQuery = new URLSearchParams(props).toString();
 
       const res = await fetch(`${this.ssrUrl}?${propsQuery}`);
-      const fragment = await res.text();
+      const fragmentHTML = await res.text();
       const component = () => (
         <section
           data-mf={this.ssrUrl}
-          dangerouslySetInnerHTML={{ __html: fragment }}
+          dangerouslySetInnerHTML={{ __html: fragmentHTML }}
         />
       );
       return {

@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import dotenv from "dotenv";
+import "cross-fetch";
 import dotenvExpand from "dotenv-expand";
 import type { Express, Handler, Request } from "express";
 import express from "express";

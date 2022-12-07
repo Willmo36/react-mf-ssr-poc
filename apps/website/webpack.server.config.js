@@ -6,10 +6,10 @@ module.exports = {
   ...baseConfig,
   target: "node",
   mode: "production",
-  entry: "./src/server/vercel.tsx",
+  entry: "./src/server/index.tsx",
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "server_dist", "api")
+    filename: "server.js",
+    path: path.resolve(__dirname, "server_dist")
   },
   module: {
     rules: [

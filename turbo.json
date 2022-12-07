@@ -5,7 +5,7 @@
 		"dev": {},
 		"dev:static": {},
 		"build:server:static": {},
-		"build:server:stream": {},
+		"build:server": {},
 		"start:server": {}
 	}
 }

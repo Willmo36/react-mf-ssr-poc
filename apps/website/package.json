@@ -13,8 +13,8 @@
 		"dev": "yarn _dev",
 		"build:client": "npx webpack build --mode=production",
 		"_build:client:copy": "yarn build:client && cp -r ./dist ./server_dist",
-		"build:server:static": "yarn _build:client:copy && npx webpack build --config ./webpack.server.config.js",
-		"build:server:stream": "yarn _build:client:copy && STATIC=true npx webpack build --config ./webpack.server.config.js",
+		"build:server:static": "yarn _build:client:copy && STATIC=true npx webpack build --config ./webpack.server.config.js",
+		"build:server": "yarn _build:client:copy && npx webpack build --config ./webpack.server.config.js",
 		"start:server": "node server_dist/server.js"
 	},
 	"dependencies": {
